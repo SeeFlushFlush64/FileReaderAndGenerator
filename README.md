@@ -42,6 +42,7 @@ A Windows Forms application that allows users to generate and save text files, a
 1. Clone the repository:
    ```sh
    git clone https://github.com/yourusername/FileReaderAndGenerator.git
+   ```
 2. Open the project in **Visual Studio**.
 3. Restore NuGet packages if required.
 4. Build and run the application.
@@ -85,3 +86,4 @@ public void Cleanup()
         File.Delete(filePath);
     }
 }
+```
