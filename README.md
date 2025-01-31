@@ -14,10 +14,12 @@ A Windows Forms application that allows users to generate and save text files, a
 
 
 ### Upload File  
-![Upload File](screenshots/upload_file.png)
+![generatetextfile_upload_file](https://github.com/user-attachments/assets/23ece0f9-b950-4682-829c-c9252d77cecf)
+
 
 ### Overwrite Confirmation  
-![Overwrite Confirmation](screenshots/overwrite_confirmation.png)
+![generatetextfile_confirm_overwrite](https://github.com/user-attachments/assets/cf502313-2c96-458a-9996-0f5af4f1211a)
+
 
 ## 🚀 How to Use
 1. **Enter text** into the textbox.
