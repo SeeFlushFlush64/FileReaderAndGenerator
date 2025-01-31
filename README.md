@@ -48,6 +48,40 @@ A Windows Forms application that allows users to generate and save text files, a
 
 ## ✅ Running Unit Tests
 This project includes **unit tests** using NUnit. To run the tests, use the following command:
+  ```sh
+  dotnet test
 
-```sh
-dotnet test
+## 🧪 Unit Tests
+
+This project includes unit tests for the `FileService` class. The following methods and their purposes are tested:
+
+### `SaveFile_ShouldReturnTrue_WhenFileIsSavedSuccessfully`
+
+- **Purpose**: This test ensures that the `SaveFile` method correctly saves a text file to the specified path when provided with valid input.
+- **Test Description**: It attempts to save a text file with the content `"Hello, world!"` to a valid file path and verifies that the file is created and the content matches the input.
+
+### `SaveFile_ShouldReturnFalse_WhenExceptionOccurs`
+
+- **Purpose**: This test checks that the `SaveFile` method returns `false` when an exception occurs due to an invalid file path.
+- **Test Description**: It tries to save a file to an invalid path (`C:\InvalidPath\`) and asserts that the result is `false`.
+
+### `SaveFile_ShouldReturnFalse_WhenFolderIsRestricted`
+
+- **Purpose**: This test verifies that the `SaveFile` method returns `false` when attempting to write to a folder with restricted access (e.g., needing administrator rights).
+- **Test Description**: It attempts to save a file to a restricted folder (`C:\Temp\`) and confirms that the result is `false`.
+
+### Cleanup
+
+After each test, the test cleans up by deleting the created file (if it exists) to ensure that the tests do not affect one another and that the file system remains clean.
+
+```csharp
+[TearDown]
+public void Cleanup()
+{
+    // Delete the file after each test
+    string filePath = @"C:\Users\micha\OneDrive\Desktop\GenerateTextFileTestDump\testFile.txt";
+    if (File.Exists(filePath))
+    {
+        File.Delete(filePath);
+    }
+}
