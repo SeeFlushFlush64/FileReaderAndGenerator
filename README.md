@@ -10,7 +10,8 @@ A Windows Forms application that allows users to generate and save text files, a
 
 ## 📸 Screenshots
 ### Main Interface  
-![Main Interface](screenshots/main_interface.png)
+![Main Interface](![generatetextfile_main_interface](https://github.com/user-attachments/assets/dd99312b-c95e-40c4-812f-b9334d8416a3))
+
 
 ### Upload File  
 ![Upload File](screenshots/upload_file.png)
