@@ -50,7 +50,7 @@ A Windows Forms application that allows users to generate and save text files, a
 This project includes **unit tests** using NUnit. To run the tests, use the following command:
   ```sh
   dotnet test
-
+  ```
 ## 🧪 Unit Tests
 
 This project includes unit tests for the `FileService` class. The following methods and their purposes are tested:
