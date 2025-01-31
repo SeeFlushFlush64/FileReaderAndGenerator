@@ -34,3 +34,12 @@ A Windows Forms application that allows users to generate and save text files, a
 1. Clone the repository:
    ```sh
    git clone https://github.com/yourusername/FileReaderAndGenerator.git
+2. Open the project in **Visual Studio**.
+3. Restore NuGet packages if required.
+4. Build and run the application.
+
+## ✅ Running Unit Tests
+This project includes **unit tests** using NUnit. To run the tests, use the following command:
+
+```sh
+dotnet test
