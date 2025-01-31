@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GenerateTextFile")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d477b867c049684f80099d3dd0ebee2880caa710")]
 [assembly: System.Reflection.AssemblyProductAttribute("GenerateTextFile")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GenerateTextFile")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

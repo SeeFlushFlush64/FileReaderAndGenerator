@@ -1,3 +1,4 @@
+using GenerateTextFile.Services;
 using System.ComponentModel.Design;
 
 namespace GenerateTextFile
@@ -5,71 +6,71 @@ namespace GenerateTextFile
     public partial class TextFileGeneratorForm : Form
     {
         private string filePath;
+        private FileService fileService;
+
         public TextFileGeneratorForm()
         {
             InitializeComponent();
+            fileService = new FileService();  // Inject FileService
             ShowInstructions();
         }
+
         private void ShowInstructions()
-        { 
-            //rTxtBoxInstruction.Text = "Enter text in the textbox and click 'Generate' button to generate the text file.";
+        {
             rTxtBoxInstruction.ReadOnly = true;
-            rTxtBoxInstruction.SelectAll();
-            //rTxtBoxInstruction.SelectionAlignment = HorizontalAlignment.Center;
+            rTxtBoxInstruction.Text = "Enter text in the textbox and click 'Generate' to create or overwrite a file.";
             rTxtBoxInstruction.Enabled = false;
         }
+
         private void btnGenerateFile_Click(object sender, EventArgs e)
         {
-            string[] inputArray = txtBoxUserInput.Text.Split(' ');
-            string fileName = string.Join('-', inputArray.Take(3));
-            if (btnGenerateFile.Text == "Generate")
+            string content = txtBoxUserInput.Text;
+
+            // Check if a file has been uploaded (filePath is not null or empty)
+            if (!string.IsNullOrEmpty(filePath))
             {
-                filePath = @$"C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\FileStorage\{fileName}.txt";
-            }
-            if (!File.Exists(filePath))
-            {
-                using (StreamWriter streamWriter = new StreamWriter(filePath))
+                // If a file is uploaded, show a confirmation dialog before overwriting
+                DialogResult result = MessageBox.Show("Are you sure you want to overwrite the existing file?",
+                    "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
                 {
-                    streamWriter.Write(txtBoxUserInput.Text);
-                    MessageBox.Show("File saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // If user chooses 'Yes', overwrite the file
+                    if (fileService.SaveFile(filePath, content))
+                    {
+                        btnGenerateFile.Text = "Generate"; // Change the button text to "Save"
+                        MessageBox.Show("File overwritten successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("An error occurred while saving the file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
             {
-                DialogResult result;
-                if (btnGenerateFile.Text == "Save")
+                // If no file is uploaded, generate a new file
+                string[] inputArray = content.Split(' ');
+                string fileName = string.Join('-', inputArray.Take(3));
+                filePath = @$"C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\FileStorage\{fileName}.txt";
+
+                if (fileService.SaveFile(filePath, content))
                 {
-                    btnGenerateFile.Text = "Generate";
-                    result = MessageBox.Show("Are you sure you want to overwrite the contents of the existing file?", "Warning", MessageBoxButtons.YesNo);
+                    MessageBox.Show("File saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                { 
-                    result = MessageBox.Show("File already exist, replace the previous file?", "Warning", MessageBoxButtons.YesNo);
-                    
-                }
-                if (result == DialogResult.Yes)
                 {
-                    using (StreamWriter streamWriter = new StreamWriter(filePath))
-                    {
-                        streamWriter.Write(txtBoxUserInput.Text);
-                        MessageBox.Show("File saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    MessageBox.Show("An error occurred while saving the file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            // Clear the text box after the operation
             txtBoxUserInput.Text = string.Empty;
         }
-        private void picBoxUploadFile_MouseEnter(object sender, EventArgs e)
-        {
-            picBoxUploadFile.Cursor = Cursors.Hand;
-        }
-        private void picBoxUploadFile_MouseLeave(object sender, EventArgs e)
-        {
-            picBoxUploadFile.Cursor = Cursors.Arrow;
-        }
+
         private void picBoxUploadFile_Click(object sender, EventArgs e)
         {
             var fileContent = string.Empty;
-        
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -80,19 +81,19 @@ namespace GenerateTextFile
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    //Get the path of specified file
+                    // Get the path of the selected file
                     filePath = openFileDialog.FileName;
 
-                    //Read the contents of the file into a stream
+                    // Read the contents of the file and load it into the textbox
                     var fileStream = openFileDialog.OpenFile();
-
                     using (StreamReader reader = new StreamReader(fileStream))
                     {
                         fileContent = reader.ReadToEnd();
                         txtBoxUserInput.Text = fileContent;
+
+                        // Change the button text to "Save", indicating an existing file
                         btnGenerateFile.Text = "Save";
                     }
-
                 }
             }
         }
@@ -106,6 +107,17 @@ namespace GenerateTextFile
             }
         }
 
+        private void picBoxUploadFile_MouseEnter(object sender, EventArgs e)
+        {
+            picBoxUploadFile.Cursor = Cursors.Hand; // Example: Change background color on hover
+        }
+
+        private void picBoxUploadFile_MouseLeave(object sender, EventArgs e)
+        {
+            picBoxUploadFile.Cursor = Cursors.Arrow; // Restore original background color
+        }
 
     }
+
+
 }
