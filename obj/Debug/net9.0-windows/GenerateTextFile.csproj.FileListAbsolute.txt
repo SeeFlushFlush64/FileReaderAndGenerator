@@ -1,0 +1,17 @@
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\GenerateTextFile.TextFileGeneratorForm.resources
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\GenerateTextFile.csproj.GenerateResource.cache
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\GenerateTextFile.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\GenerateTextFile.AssemblyInfoInputs.cache
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\GenerateTextFile.AssemblyInfo.cs
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\GenerateTextFile.csproj.CoreCompileInputs.cache
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\bin\Debug\net9.0-windows\GenerateTextFile.exe
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\bin\Debug\net9.0-windows\GenerateTextFile.deps.json
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\bin\Debug\net9.0-windows\GenerateTextFile.runtimeconfig.json
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\bin\Debug\net9.0-windows\GenerateTextFile.dll
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\bin\Debug\net9.0-windows\GenerateTextFile.pdb
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\GenerateTextFile.dll
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\refint\GenerateTextFile.dll
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\GenerateTextFile.pdb
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\GenerateTextFile.genruntimeconfig.cache
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\ref\GenerateTextFile.dll
+C:\Users\micha\source\repos\GenerateTextFile\GenerateTextFile\obj\Debug\net9.0-windows\GenerateTextFile.Properties.Resources.resources
