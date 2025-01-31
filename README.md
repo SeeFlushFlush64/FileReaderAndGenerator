@@ -10,15 +10,20 @@ A Windows Forms application that allows users to generate and save text files, a
 
 ## 📸 Screenshots
 ### Main Interface  
-![generatetextfile_main_interface](https://github.com/user-attachments/assets/dd99312b-c95e-40c4-812f-b9334d8416a3)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/dd99312b-c95e-40c4-812f-b9334d8416a3" alt="Main Interface">
+</p>
 
 ### Upload File  
-![generatetextfile_upload_file](https://github.com/user-attachments/assets/23ece0f9-b950-4682-829c-c9252d77cecf)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/23ece0f9-b950-4682-829c-c9252d77cecf" alt="Upload File">
+</p>
 
 ### Overwrite Confirmation  
-![generatetextfile_confirm_overwrite](https://github.com/user-attachments/assets/cf502313-2c96-458a-9996-0f5af4f1211a)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cf502313-2c96-458a-9996-0f5af4f1211a" alt="Overwrite Confirmation">
+</p>
+
 
 
 ## 🚀 How to Use
